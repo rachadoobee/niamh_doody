@@ -12,11 +12,13 @@ const matches = require('./data/match_info.json');
 
 app.get('/timeline', function (req, resp) {
   const entityNo = Object.keys(req.query)[0];
+  let clubImg = "";
   for (const club of clubs) {
     if (club.id === entityNo) {
-      resp.send(club.img);
+      clubImg = club.img
     }
   }
+  resp.send(clubImg);
 });
 
 app.get('/club', function (req, resp) {
