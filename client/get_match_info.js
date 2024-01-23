@@ -2,7 +2,7 @@ for (let i = 1; i <= 9; i++) {
     let matchElement = document.getElementById(`match${i}`);
 
     if (matchElement) {
-        matchElement.addEventListener('click', function(event) {
+        matchElement.addEventListener('click', async function(event) {
             fetch("http://127.0.0.1:8090/match?".concat(i))
                 .then(response=>response.json())
                 .then(body=>{

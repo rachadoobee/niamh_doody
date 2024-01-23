@@ -72,6 +72,5 @@ app.post("/newcomment",function(req,resp){
         }
     };
 });
-
 app.listen(8090);
 module.exports = app;

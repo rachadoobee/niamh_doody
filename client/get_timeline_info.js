@@ -2,7 +2,7 @@ for (let i = 1; i <= 4; i++) {
     let timelineElement = document.getElementById(`timeline${i}`);
 
     if (timelineElement) {
-        timelineElement.addEventListener('click', function(event) {
+        timelineElement.addEventListener('click', async function(event) {
             fetch(`http://127.0.0.1:8090/club?${i}`)
             .then(response=>response.json())
             .then(body=> {
