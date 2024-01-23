@@ -11,16 +11,25 @@ const matchComments = JSON.parse(fs.readFileSync(commentsFile));
 var clubs = require("./data/club_info.json");
 var matches = require("./data/match_info.json");
 
-app.get("/club",function(req, resp){
-    clubName = Object.keys(req.query)[0]
-    let timeline_info = []
+app.get("/timeline",function(req, resp){
+    entityNo = Object.keys(req.query)[0]
     for (const club of clubs){
-        if (club["tags"].includes(clubName)){
-            timeline_info.push(club["club"])
-            timeline_info.push(club["text"])
+        if (club["id"]===entityNo){
+            resp.send(club["img"])
         }
     }
-    resp.send(timeline_info)
+})
+
+app.get("/club",function(req, resp){
+    clubNo = Object.keys(req.query)[0]
+    let club_info = []
+    for (const club of clubs){
+        if (club["id"]===clubNo){
+            club_info.push(club["name"])
+            club_info.push(club["text"])
+        }
+    }
+    resp.send(club_info)
 });
 
 app.get("/match",function(req, resp){
