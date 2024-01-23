@@ -10,7 +10,7 @@ for (let i = 1; i <= 4; i++) {
           document.getElementById('content').innerHTML = body[1];
         })
         .catch(error => {
-          console.error('Error:', error);
+          alert('Unable to get information about club, please check connection!');
         });
     });
   };

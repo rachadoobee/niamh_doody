@@ -5,7 +5,7 @@ async function loadImages (club) {
     const html = `<img id='club${club}' class='card-img-top m-0' data-bs-toggle='modal' data-bs-target='#exampleModalCenter' src='./images/${imgName}'></img>`;
     document.getElementById(`timeline${club}`).innerHTML = html;
   } else {
-    alert('Sorry you cannot type you have a 404');
+    alert('Sorry cannot load timeline images, please check connection!');
   }
 };
 

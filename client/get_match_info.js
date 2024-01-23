@@ -15,7 +15,7 @@ for (let i = 1; i <= 9; i++) {
           document.getElementById('assists').innerHTML = body[6];
         })
         .catch(error => {
-          console.error('Error:', error);
+            alert('Unable to get match info, please check connection!');
         });
     });
   }

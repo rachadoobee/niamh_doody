@@ -10,7 +10,7 @@ async function loadComments (match) {
     html += '</ul>\n';
     document.getElementById('comments').innerHTML = html;
   } else {
-    alert('Sorry you cannot type you have a 404');
+    alert('Sorry you cannot show match comments, please check connection!');
   }
 };
 

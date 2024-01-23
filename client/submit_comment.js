@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
         loadComments(matchNo);
       } else {
         // Handle errors
-        console.error('Failed to post comment');
+        alert('Unable to post comment, please try again');
       }
     } catch (error) {
-      console.error('Error:', error);
+      alert('Unable to connect to server, please check connection!');
     }
   });
 });
