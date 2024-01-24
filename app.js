@@ -12,10 +12,10 @@ const matches = require('./data/match_info.json');
 
 app.get('/timeline', function (req, resp) {
   const entityNo = Object.keys(req.query)[0];
-  let clubImg = "";
+  let clubImg = '';
   for (const club of clubs) {
     if (club.id === entityNo) {
-      clubImg = club.img
+      clubImg = club.img;
     }
   }
   resp.send(clubImg);
@@ -50,11 +50,13 @@ app.get('/match', function (req, resp) {
 
 app.get('/comments', function (req, resp) {
   const matchNo = Object.keys(req.query)[0];
+  let comments = [];
   for (const matchComment of matchComments) {
     if (matchComment.match === matchNo) {
-      resp.send(matchComment.comments);
+      comments = matchComment.comments;
     }
   }
+  resp.send(comments);
 });
 
 app.post('/newcomment', function (req, resp) {
